@@ -11,7 +11,7 @@ class DummyRclone:
     def copyto(self, src: str, dst: str) -> None:
         self.copied.append((src, dst))
 
-    def check(self, src: str, dst: str) -> None:
+    def verify_file(self, src: str, dst: str) -> None:
         return None
 
 

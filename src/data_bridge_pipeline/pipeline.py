@@ -35,7 +35,7 @@ class PipelineRunner:
             dst = f"{self.profile.destination}/{entry.path}"
             self.rclone.copyto(src, dst)
             if self.profile.verify_after_copy:
-                self.rclone.check(src, dst)
+                self.rclone.verify_file(src, dst)
             self._save_last_index(idx)
 
     def pull(self, manifest: Manifest) -> None:
@@ -47,5 +47,5 @@ class PipelineRunner:
             dst = f"{self.profile.source}/{entry.path}"
             self.rclone.copyto(src, dst)
             if self.profile.verify_after_copy:
-                self.rclone.check(src, dst)
+                self.rclone.verify_file(src, dst)
             self._save_last_index(idx)

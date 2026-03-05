@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$ROOT"
-
-python -m data_bridge_pipeline.cli doctor --profile profiles/dev.yaml
-python -m data_bridge_pipeline.cli pull --profile profiles/dev.yaml
+# Pull queue objects from R2 to local ext disk archive on Mac mini.
+# This wrapper keeps parity with /Volumes/extdisk/massive/auto_pull.sh defaults.
+rclone move \
+  r2_down:ny-data-transfer/data-bridge-pipeline/queue \
+  /Volumes/extdisk/data-bridge-pipeline \
+  --transfers=8 \
+  --min-age=10s

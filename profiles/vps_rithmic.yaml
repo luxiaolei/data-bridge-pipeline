@@ -1,0 +1,11 @@
+source: /home/trader/MyRepos/data-bridge-pipeline/runtime/vps_out
+destination: r2_down:ny-data-transfer/data-bridge-pipeline/queue/rithmic_raw
+manifest_path: /home/trader/MyRepos/data-bridge-pipeline/runtime/manifests/rithmic_manifest.json
+state_path: /home/trader/MyRepos/data-bridge-pipeline/runtime/state/vps_rithmic_state.json
+queue_path: /home/trader/MyRepos/data-bridge-pipeline/runtime/state/vps_rithmic_queue.json
+rclone_bin: rclone
+verify_after_copy: false
+delete_after_verify: false
+total_shards: 1
+shard_id: 0
+dry_run: false

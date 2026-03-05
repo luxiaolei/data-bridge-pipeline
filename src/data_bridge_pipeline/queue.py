@@ -17,6 +17,6 @@ class QueueProcessor:
             if action.kind == "move":
                 self.rclone.move(action.src, action.dst)
             elif action.kind == "delete_after_verify":
-                self.rclone.check(action.src, action.dst)
+                self.rclone.verify_file(action.src, action.dst)
                 if self.delete_after_verify:
                     self.rclone.delete(action.src)

@@ -14,7 +14,7 @@ class MockRclone:
     def delete(self, target: str) -> None:
         self.deletes.append(target)
 
-    def check(self, src: str, dst: str) -> None:
+    def verify_file(self, src: str, dst: str) -> None:
         self.checked.append((src, dst))
 
 
