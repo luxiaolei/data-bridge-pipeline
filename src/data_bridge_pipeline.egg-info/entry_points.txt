@@ -1,0 +1,2 @@
+[console_scripts]
+data-bridge-pipeline = data_bridge_pipeline.cli:main

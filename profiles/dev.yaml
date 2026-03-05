@@ -1,0 +1,10 @@
+source: /tmp/source
+destination: /tmp/destination
+manifest_path: ./manifest.json
+state_path: ./.pipeline-state.json
+queue_path: ./.pipeline-queue.json
+verify_after_copy: true
+delete_after_verify: true
+total_shards: 1
+shard_id: 0
+dry_run: true

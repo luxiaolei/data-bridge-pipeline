@@ -1,0 +1,11 @@
+source: /data/hot
+destination: r2:trading-data-archive/hot
+manifest_path: /etc/data-bridge/manifest.json
+state_path: /var/lib/data-bridge/state.json
+queue_path: /var/lib/data-bridge/queue.json
+rclone_bin: rclone
+verify_after_copy: true
+delete_after_verify: true
+total_shards: 8
+shard_id: 0
+dry_run: false
